@@ -6,16 +6,16 @@ import { selectCollectionsForPreview } from '../../redux/shop/shop.selectors';
 
 import CollectionPreview  from '../preview-collection/collection-preview.component';
 
-import './collections-overview.styles.scss';
+import { CollectionsOverviewContainer } from './collections-overview.styles.jsx';
 
 const CollectionOverview = ({ collections }) => (
-    <div className="collection-overview">
+    <CollectionsOverviewContainer>
         {
         collections.map(({ id, ...otherCollectionProps }) => (
             <CollectionPreview key={id} {...otherCollectionProps} /> 
         ))
         }
-    </div>
+    </CollectionsOverviewContainer>
 )
 
 const mapStateToProps = createStructuredSelector({
